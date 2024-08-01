@@ -5,7 +5,7 @@ git clone https://github.com/harishikesh1/payment-app.git
 ```
 
 - npm install
-- Run postgres either locally  
+- Run postgres locally  
 
 ```jsx
 docker run  -e POSTGRES_PASSWORD=mysecretpassword -d -p 5432:5432 postgres
