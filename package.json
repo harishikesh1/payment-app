@@ -20,11 +20,5 @@
   "workspaces": [
     "apps/*",
     "packages/*"
-  ],
-  "dependencies": {
-    "aws-sdk": "^2.1665.0",
-    "jsonwebtoken": "^9.0.2",
-    "mock-aws-s3": "^4.0.2",
-    "nock": "^13.5.4"
-  }
+  ]
 }
