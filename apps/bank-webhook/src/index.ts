@@ -62,12 +62,7 @@ app.post("/hdfcwebhook", async (req, res) => {
             })
         ]);
         const decoded = jwt.decode(body.token, { complete: true }) as jwt.JwtPayload;
-        // console.log('Original Header:', decoded);
-
-        // decoded.payload.status = "Success"
-        // console.log(`njkfasfdsgdfgf`, decoded);
-        // const newToken = jwt.sign(decoded.payload, secret)
-        // console.log(`dfdsfdsfdsfsdsfsdfsdfsdfds`, newToken);
+        
         
         res.json({
             message: "Captured"
