@@ -24,7 +24,20 @@ jobs:
         context: .
         file: ./docker/Dockerfile.user
         push: true
-        tags: harishikesh/paytm:latest  # Replace with your Docker Hub username and repository
+        tags: harishikesh/paytm:latest  
 
     - name: Verify Pushed Image
-      run: docker pull harishikesh/paytm:latest  # Replace with your Docker Hub username and repository
+      run: docker pull harishikesh/paytm:latest  
+    
+    - name: Deploy to EC2
+      uses: appleboy/ssh-action@master
+      with:
+        host: ${{ secrets.SSH_HOST }}
+        username: ${{ secrets.SSH_USERNAME }}
+        key: ${{ secrets.SSH_KEY }}
+        script: |
+          sudo docker pull harishikesh/paytm:latest
+          sudo docker stop web-app || true
+          sudo docker rm web-app || true
+          sudo docker run -d --name web-app -p 3005:3000 harishikesh/paytm:latest
+ 
