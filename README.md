@@ -1,14 +1,14 @@
 - Clone the repo
 
 ```jsx
-git clone https://github.com/100xdevs-cohort-2/week-17-final-code
+git clone git@github.com:harishikesh1/payment-app.git
 ```
 
 - npm install
-- Run postgres either locally or on the cloud (neon.tech)
+ 
 
 ```jsx
-docker run  -e POSTGRES_PASSWORD=mysecretpassword -d -p 5432:5432 postgres
+docker run -d --name paytm-container -e POSTGRES_PASSWORD=mysecretpassword -p 5432:5432 -v paytm-db:/var/lib/postgresql/data postgres
 ```
 
 - Copy over all .env.example files to .env
@@ -23,6 +23,6 @@ docker run  -e POSTGRES_PASSWORD=mysecretpassword -d -p 5432:5432 postgres
 
 <!-- 
 docker rm paytm-container
-docker run -d --name paytm-container -e POSTGRES_PASSWORD=mysecretpassword -p 5432:5432 -v paytm-db:/var/lib/postgresql/data postgres
+
  
  -->
